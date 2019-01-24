@@ -1,26 +1,24 @@
 module Day1
     ( 
         part1,
-        --part2
+        part2
     ) where
 
 import System.IO
 import Data.List
 
-parseChange :: String -> Integer
-parseChange ('+':num) = read num
-parseChange num = read num
+parseLine :: String -> Integer
+parseLine ('+':num) = read num
+parseLine num = read num
 
-parseChanges :: String -> [Integer]
-parseChanges = map parseChange . lines
+parseLines :: String -> [Integer]
+parseLines = map parseLine . lines
 
--- Part 1
-
---part1 :: IO ()
+part1 :: IO ()
 part1 = do
     handle <- openFile "src/input1.txt" ReadMode
     input <- hGetContents handle
-    print $ show $ foldl (+) 0 $ parseChanges input
+    putStrLn $ show $ foldl (+) 0 $ parseLines input
 
---part2 :: IO ()
---part2 = show "i am the day 1 part 2"
+part2 :: IO ()
+part2 = putStrLn "i am the day 1 part 2"
