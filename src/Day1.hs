@@ -16,7 +16,7 @@ parseLines = map parseLine . lines
 
 part1 :: IO ()
 part1 = do
-    handle <- openFile "src/input1.txt" ReadMode
+    handle <- openFile "src/input_1-1.txt" ReadMode
     input <- hGetContents handle
     putStrLn $ show $ foldl (+) 0 $ parseLines input
 
